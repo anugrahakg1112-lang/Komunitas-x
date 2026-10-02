@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#10111b"><meta name="description" content="Komunitas digital untuk ngobrol, berbagi, dan berkarya."><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><title>RuangKita — Komunitas</title>
+</head>
+<body>
+<div id="authView" class="auth-screen">
+ <div class="auth-glow glow-a"></div><div class="auth-glow glow-b"></div>
+ <section class="auth-card">
+  <div class="brand"><div class="brand-mark">✳</div><div><b>RuangKita</b><small>Temukan ruangmu.</small></div></div>
+  <div class="teddy-wrap"><canvas id="teddyCanvas" aria-label="Animasi teddy"></canvas><div id="teddyLoading">Memuat animasi…</div></div>
+  <div class="auth-copy"><span class="eyebrow">KOMUNITAS DIGITAL</span><h1 id="authTitle">Selamat datang kembali</h1><p id="authSubtitle">Masuk untuk melanjutkan obrolan dan menemukan teman baru.</p></div>
+  <form id="authForm">
+   <label for="authName" id="nameLabel" class="hidden">Nama panggilan</label><input id="authName" class="hidden" autocomplete="nickname" placeholder="Nama panggilan">
+   <label for="email">Email</label><input id="email" type="email" placeholder="nama@email.com" autocomplete="email" required>
+   <label for="password">Kata sandi</label><div class="password-field"><input id="password" type="password" placeholder="Masukkan kata sandi" autocomplete="current-password" required><button type="button" id="togglePassword" aria-label="Tampilkan kata sandi">◉</button></div>
+   <button class="primary-btn" id="authSubmit" type="submit">Masuk <span>→</span></button>
+  </form>
+  <p class="auth-switch" id="authSwitch">Belum punya akun? <button type="button" id="switchMode">Daftar</button></p><p class="fine-print">Dengan melanjutkan, kamu menyetujui aturan komunitas RuangKita.</p>
+ </section><footer class="auth-footer">Dibuat untuk ruang yang lebih hangat <span>✦</span></footer>
+</div>
+<div id="appView" class="app-shell hidden">
+ <aside class="server-rail"><div class="rail-logo">✳</div><button class="server active" title="RuangKita">RK</button><button class="server">🎮</button><button class="server">🎨</button><button class="server">📚</button><button class="add-server" title="Tambah komunitas">＋</button><div class="rail-bottom">⚙</div></aside>
+ <aside class="sidebar"><div class="workspace-head"><div><small>RUANG KOMUNITAS</small><h2>RuangKita <span>⌄</span></h2></div><button class="icon-btn" id="newPostBtn" title="Buat postingan">＋</button></div><div class="side-search">⌕ <input id="channelSearch" placeholder="Cari kanal"></div><div class="side-label">RUANGAN <button id="addChannel" title="Tambah kanal">＋</button></div><nav id="channelList"><button class="channel active" data-channel="umum"><span>#</span> umum <i>3</i></button><button class="channel" data-channel="perkenalan"><span>#</span> perkenalan</button><button class="channel" data-channel="gaming"><span>#</span> gaming <em>•</em></button><button class="channel" data-channel="karya"><span>#</span> pamer-karya</button><button class="channel" data-channel="bantuan"><span>#</span> bantuan</button></nav><div class="side-label dm-label">PESAN LANGSUNG <button id="newDm">＋</button></div><div class="dm-person"><span class="avatar green">N</span><span>Naya</span><i class="online-dot"></i></div><div class="dm-person"><span class="avatar purple">R</span><span>Raka</span><i class="online-dot"></i></div><div class="user-panel"><div class="avatar user-avatar">U</div><div class="user-meta"><b id="userName">Pengguna</b><small>Online</small></div><button id="logoutBtn" title="Keluar">⇥</button></div></aside>
+ <main class="main-panel"><header class="topbar"><button id="mobileMenu" class="icon-btn mobile-only">☰</button><div class="current-channel"><span>#</span><b id="channelTitle">umum</b><small>Tempat ngobrol santai dan berbagi cerita.</small></div><div class="top-actions"><button class="icon-btn" title="Notifikasi">♧</button><button class="icon-btn" title="Bantuan">?</button><div class="top-avatar">U</div></div></header>
+  <div class="feed" id="feed"><div class="welcome-banner"><div class="welcome-icon">✳</div><div><span>SELAMAT DATANG DI RUANGKITA</span><h2>Ruang ngobrolmu dimulai di sini.</h2><p>Kenalan, berbagi ide, dan bangun hal seru bersama komunitas.</p></div></div><div class="date-divider"><span>HARI INI</span></div><div id="posts"></div></div>
+  <form id="messageForm" class="composer"><button type="button" id="attachBtn" class="composer-plus">＋</button><input id="messageInput" placeholder="Kirim pesan ke #umum" autocomplete="off"><button type="button" class="composer-emoji">☺</button><button type="submit" class="send-btn" aria-label="Kirim">↑</button></form>
+ </main>
+ <aside class="members"><div class="members-head">ANGGOTA — <span>12</span></div><div class="member-group">ONLINE — 4</div><div class="member"><span class="avatar green">N</span><div><b>Naya</b><small>lagi santai</small></div><i class="online-dot"></i></div><div class="member"><span class="avatar purple">R</span><div><b>Raka</b><small>main game</small></div><i class="online-dot"></i></div><div class="member"><span class="avatar orange">A</span><div><b>Adi</b><small>membuat sesuatu</small></div><i class="online-dot"></i></div><div class="member"><span class="avatar blue">S</span><div><b>Salsa</b><small>online</small></div><i class="online-dot"></i></div><div class="member-group offline-group">OFFLINE — 8</div><div class="member muted"><span class="avatar gray">D</span><div><b>Dimas</b><small>offline</small></div></div><div class="member muted"><span class="avatar gray">K</span><div><b>Kiki</b><small>offline</small></div></div><div class="tip-card"><span>✦</span><b>Jaga ruang tetap nyaman</b><p>Hormati anggota lain dan bagikan hal yang membangun.</p></div></aside>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="https://unpkg.com/@rive-app/canvas@2.26.4"></script><script src="script.js"></script>
+</body></html>
